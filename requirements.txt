@@ -31,7 +31,6 @@ python-ldap==3.3.1
 pytz==2020.5
 requests==2.25.1
 requests-html==0.10.0
-secrets==1.0.2
 six==1.15.0
 soupsieve==2.1
 systematic==4.8.7
