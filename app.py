@@ -1,7 +1,7 @@
 from flask import Flask, request
 import requests
 from modules.scrapping import meme
-import secrets
+from random import randint
 from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
@@ -30,14 +30,9 @@ def bot():
     if 'meme' in incoming_msg or 'mene' in incoming_msg:
         quote = 'Hmm... Que tal esse?'
         resp.message().body(quote)
-        msg.media(meme(secrets.randbelow(6500)))
+        msg.media(meme(randint(0, 4000)))
         responded = True
-
-    if 'arthur' in incoming_msg:
-        quote = 'Hmm... Que tal esse?'
-        resp.message().body(quote)
-        responded = True
-
+        
     if not responded:
         msg.body('Só conheço frases, memes e gatos famosos, desculpe!')
     return str(resp)
