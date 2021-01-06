@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import secrets
 from random import randint
 def meme(y):
     site = requests.get(f'https://www.ahnegao.com.br/pag/{y}').content
